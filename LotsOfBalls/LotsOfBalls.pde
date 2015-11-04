@@ -12,27 +12,24 @@ float[] diam=new float[count];
 void setup() {
   //set size of canvas
   size(800, 600);
-  int i = 0;
-
-  while (i<count) {
+  for(int i = 0; i < count; i++) {
 
     //initialize variables
     x[i] = random(width);
     y[i] = random(height);
     diam[i] = 9;
-    velX[i] = random(-2,2);
-    velY[i] = random(-2,2);
-    i++;
+    velX[i] = random(-2, 2);
+    velY[i] = random(-2, 2);
   }
 }
 
 void draw() {
   //draw background to cover previous frame
   background(0);
-  int i = 0;
-  while (i<count) {
+  for (int i = 0; i < count; i++) {
+
     //draw ball
-    fill(random(255),random(255), random(255));
+    fill(random(255), random(255), random(255));
     ellipse(x[i], y[i], diam[i], diam[i]);
 
     //add velocity to position
@@ -53,6 +50,5 @@ void draw() {
     } else if (y[i] - diam[i]/2 <= 0) {
       velY[i] = abs(velY[i]);  //if the ball hits the bottom wall, assign x velocity the positive version of itself
     }
-    i++;
   }
 }
