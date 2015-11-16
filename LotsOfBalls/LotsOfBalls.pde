@@ -1,4 +1,4 @@
-int count = 100;
+int count = 100; 
 
 
 //declare and initialize arrays
